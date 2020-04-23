@@ -25,7 +25,11 @@ module.exports = {
       }
       const result = await loginUser(data)
       const token = jwt.sign({result}, 'OKANEMO2204', {expiresIn: '1h'})
-      return helper.response(res, 200, {token})
+      const newResult = {
+        role: result.role,
+        token: token,
+      }
+      return helper.response(res, 200, newResult)
     } catch (err) {
       const result = {message: "Invalid username or password"}
       return helper.response(res, 403, result)
