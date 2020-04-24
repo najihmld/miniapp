@@ -9,6 +9,6 @@
   - http://127.0.0.1:3000/
   
  # login dashboard
-  -username: admin
-  -password: admin
+  - username: admin
+  - password: admin
 
